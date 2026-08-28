@@ -1,1 +1,29 @@
-spring.application.name=inventory-service
+spring:
+  application:
+    name: inventory-service
+  datasource:
+    url: jdbc:postgresql://localhost:5433/inventory
+    username: inventory
+    password: localdev
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
