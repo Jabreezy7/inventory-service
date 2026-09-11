@@ -18,6 +18,7 @@ spring:
 logging:
   level:
     org.hibernate.SQL: DEBUG
+    org.springframework.web: DEBUG
 
 management:
   endpoint:
@@ -26,4 +27,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics,mappings
