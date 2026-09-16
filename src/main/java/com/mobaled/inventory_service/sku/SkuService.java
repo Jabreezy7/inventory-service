@@ -33,4 +33,10 @@ public class SkuService {
         return SkuResponse.from(sku);
     }
 
+    @Transactional(readOnly = true)
+    public SkuResponse getBySkuCode(String skuCode){
+        Sku sku = skuRepository.findBySkuCode(skuCode).orElseThrow(() -> new SkuNotFoundException(skuCode));
+        return SkuResponse.from(sku);
+    }
+
 }
