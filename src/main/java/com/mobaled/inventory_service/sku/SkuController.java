@@ -42,5 +42,10 @@ public class SkuController {
     public ResponseEntity<SkuResponse> getById(@PathVariable Long id){
         return ResponseEntity.ok(skuService.getById(id));
     }
+
+    @GetMapping("/by-code/{skuCode}")
+    public ResponseEntity<SkuResponse> getBySkuCode(@PathVariable String skuCode){
+        return ResponseEntity.ok(skuService.getBySkuCode(skuCode));
+    }
     
 }
